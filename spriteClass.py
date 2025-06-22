@@ -2,8 +2,7 @@ from pygame import *
 
 
 class Gamesprite(sprite.Sprite):
-    def __init__(self, player_image, player_x, player_y,player_speed, 
-                 width, height):
+    def __init__(self, player_image, player_x, player_y,player_speed, width, height):
         super().__init__()
         self.image = transform.scale(image.load(player_image), (width,height))
         self.speed = player_speed
@@ -21,6 +20,10 @@ class Gamesprite(sprite.Sprite):
 
 class Player(Gamesprite):
     
-    def update(self):
-        print('test')
-        pass
+    def update_right(self):
+        
+        key_pressed = key.get_pressed()
+        if key_pressed[K_UP] and self.rect.y > 5:
+            self.rect.y -= self.speed
+        if key_pressed[K_DOWN] and self.rect.y <= 380:
+            self.rect.y += self.speed
