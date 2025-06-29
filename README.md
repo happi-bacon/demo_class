@@ -1,2 +1,3 @@
 # demo_class
-This is for demo in python start 2 class
+This game is the Ping Pong Game
+The Ping Pong Game is a simple two-dimensional sports game simulating table tennis.
